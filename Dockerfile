@@ -2,7 +2,7 @@ FROM crazycode/jdk7
 
 MAINTAINER crazycode
 ENV DEBIAN_FRONTEND noninteractive
-ENV ES_PKG_NAME elasticsearch-1.4.0
+ENV ES_PKG_NAME elasticsearch-1.4.1
 
 RUN apt-get update && \
    apt-get install -y wget && \
@@ -12,7 +12,7 @@ RUN apt-get update && \
 # Install ElasticSearch.
 RUN \
   cd / && \
-  wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
+  wget http://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
   mv /$ES_PKG_NAME /elasticsearch
